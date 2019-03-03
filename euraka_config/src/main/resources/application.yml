@@ -1,0 +1,21 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: config-server
+  rabbitmq:
+    addresses: 192.168.177.128:5672,192.168.177.1:5672
+    username: mip
+    password: 123456
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

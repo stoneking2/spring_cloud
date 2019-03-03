@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: client
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8100
+      fail-fast: false
+  rabbitmq:
+    addresses: 192.168.177.128:5672,192.168.177.1:5672
+    username: mip
+    password: 123456
+management:
+  endpoints:
+     web:
+   #   base-path: / #修改访问路径  2.0之前默认是/   2.0默认是 /actuator  可以通过这个属性值修改
+       exposure:
+        include: '*'  #开放所有页面节点  默认只开启了health、info两个节点
+             
